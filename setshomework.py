@@ -7,5 +7,5 @@ print(setz3)
 setz4=setx.symmetric_difference(sety)
 print(setz4)
 
-setz5= sety.symmetric_difference(setx)
+setz5=sety.symmetric_difference(setx)
 print(setz5)
