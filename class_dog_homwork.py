@@ -9,7 +9,7 @@ class dog:
 tommy=dog('tommy','bulldog')
 abi=dog('abi','german shepard')
 
-print('black {} is a good friend'.format(tommy.spices))
+print('black {} is a bad friend'.format(tommy.spices))
 print('White {} is a good friend'.format(abi.spices))
 
 
