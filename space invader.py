@@ -75,3 +75,27 @@ def enemy(x,y,i):
 def ISCOLLISION(enemyX, enemyY, bulletX, bulletY):
     distance= math.sqrt((enemyX-bulletX)** 2 +(enemyY-bulletY)**2)
     return distance< COLLISION_DISTANCE
+
+running= True
+while running:
+    screen.fill(0,0,0)
+    screen.bilt(baground,(0,0))
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                PLAYERX_CHANGE= -5
+            if event.key == pygame.K_RIGHT:
+                PLAYERX_CHANGE= 5 
+            if event.key == pygame.K_SPACE and BULLET_STATE == 'ready':
+             BULLETX = PLAYERX
+             FIRE_BULLET(BULLETX,BULLETY)
+        if event.type == pygame.KEYUP and event.key in [pygame.K_LEFT,pygame.K_RIGHT]:
+            PLAYERX_CHANGE=0
+        PLAYERX+=PLAYERX_CHANGE
+        PLAYERX= max(0,min(PLAYERX, SCREEN_WIDTH- 64 ))
+
+        for i in range(NUM_OF_EMEMYIES):
+            if ENEMYY[i]>340
+            for j in range(NUM_OF_EMEMYIES)
