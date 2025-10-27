@@ -1,13 +1,18 @@
-def divide(ourdividend, ourdivisor):
-    sign=(-1 if (ourdividend<0)^(ourdivisor <0)else 1);
-ourdividend=abs(ourdividend);
-ourdivisor=abs(ourdivisor);
+def divide(ourdividend, ourDivisor):
+  sign = (-1 if((ourdividend < 0) ^ (ourDivisor < 0)) else 1)
+  ourdividend = abs(ourdividend)
+  ourDivisor = abs(ourDivisor)
 
-Quotientnumber=0
-tempnumber=0
+  quotientNumber = 0
+  tempNumber = 0
+  for i in range(31, -1, -1):
+    if (tempNumber + (ourDivisor << i) <= ourdividend):
+      tempNumber += ourDivisor << i
+      quotientNumber |= 1 << i
+  if sign == -1:
+    quotientNumber = -quotientNumber
+  return quotientNumber
 
-for i in range(31,-1,-1):
-    if (tempnumber+(ourdivisor<<i) <=ourdividend):
-        tempnumber+= ourdivisor <<i
-        Quotientnumber|=1<<i
-        
+a = int(input("Enter a for a/b: "))
+b = int(input("Enter b for a/b: "))
+print("Result of", a, "/", b, "is", divide(a, b))
