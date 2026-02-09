@@ -12,5 +12,6 @@ def findwater(a, a_size):
         water+= min(lefttallest[i],righttallest[i] - a[i])
     return water
 a= [0,1,0,2,1,1,0,1,3,2,1,2,1]
-
+bars= len(a)
+print('water :',findwater(a,bars))
 
